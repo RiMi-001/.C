@@ -1,2 +1,2 @@
-# facul
+# Faculdade de Engenharia da Computação
 
