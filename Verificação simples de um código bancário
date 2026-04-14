@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+	
+	char number2[12];
+	int reversed_numero = 0, remainder, numero, number;
+	int correto = 1;
+	
+	correto = 1;
+	
+	printf(" Digite o numero da sua conta: ");
+	scanf("%11s", number2);
+	
+    
+	if (strlen(number2) != 3){
+		correto = 0;
+	}else {
+		
+		for (int i = 0; i < strlen(number2); i++) {
+            if (!isdigit(number2[i])) {
+                correto = 0;
+                break;
+			}
+		}
+    }
+
+    if(!correto){
+	printf("\n ERRO!, o codigo so pode ser formado por 3 digitos numericos\n");
+       correto = 0;
+    exit(EXIT_FAILURE);
+	}
+
+    number = atoi(number2);
+    numero = number; 
+	
+       while (numero != 0){
+       remainder = numero % 10;
+ 	   reversed_numero = reversed_numero *10 + remainder;
+ 	   numero /= 10;
+	}
+	
+    int soma = number + reversed_numero;
+	
+	if (soma >= 1000 && soma <=9999){
+    
+	int resultado = soma / 1000 * 1 + soma % 1000 / 100 * 2 + soma % 100 /10 * 3 + soma % 10 * 4 ;
+	
+	printf("\n Digito verificador: %d\n", resultado % 10);
+	
+	}else {
+		
+    int resultado = soma / 100 * 1 + soma % 100 / 10 * 2 + soma % 10 * 3;
+    
+    printf("\nDigito verificador: %d\n", resultado % 10);
+	
+		
+	}
+	
+	
+	return 0;
+}
