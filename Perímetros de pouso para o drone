@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+struct Ponto {
+
+    float x;
+    float y;
+ 
+};
+
+int main(){
+	setlocale(LC_ALL,"Portuguese_Brazil");
+	
+	struct Ponto p;
+	printf("Digite as coordenadas x e y de pouso do drone: ");
+	scanf("%f %f", &p.x, &p.y);
+	
+	if (((p.x >= 4 && p.x <= 14) && (p.y >= 4 && p.y <= 10)) || ((p.x >= 16 && p.x <= 25.6) && (p.y >= 2 && p.y <= 11.6))) { 
+	
+		printf("\nCoordenadas dentro dos limites permitidos, aterrisagem autorizada\n");
+		
+	}else {
+	
+	   printf("\nCoordenadas fora dos limites permitidos, aterrisagem negada\n");
+	
+	
+	}	
+	return 0;
+}
