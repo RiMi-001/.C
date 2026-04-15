@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(){
+	
+	int fitas, N_fitas, quant_fitas_estragadas, quant_fitas_respostas;
+	printf("digite a quantidade de fitas da sua locadora: ");
+	scanf("%d", &fitas);
+	
+	quant_fitas_estragadas = fitas * 0.02;
+	
+	N_fitas = fitas - quant_fitas_estragadas;
+	
+	quant_fitas_respostas =(fitas * 0.1);
+	
+	fitas = N_fitas + quant_fitas_respostas;
+	
+	printf("Quantidade de fitas perdidas: %d\n\nQuantidade de fitas repostas: %d\n\nFitas totais: %d\n\n",quant_fitas_estragadas, quant_fitas_respostas, fitas);
+	return 0;
+}
