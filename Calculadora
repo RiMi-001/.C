@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <locale.h>
+
+//Calculadora Simples
+int main(){
+	setlocale(LC_ALL,"Portuguese_Brazil");
+	
+	float number1, number2, resultado;
+	int escolha;
+	printf("Calculadora\n\n\nDigite dois números: ");
+	scanf("%f %f", &number1, &number2);
+	
+	printf("\nLista de operações:\n\n1)Soma\n2)Subtração\n3)Multiplicação\n4)Divisão\n\nEscolha a opção: ");
+	scanf("%d", &escolha);
+	
+	if(escolha == 1){
+		resultado = number1 + number2;
+	
+	}else if(escolha == 2){
+		resultado = number1 - number2;
+	
+	}else if(escolha == 3){
+		resultado = number1 * number2;
+		
+	}else if(escolha == 4){
+		resultado = number1 / number2;
+	}
+	printf("resultado: %.2f", resultado);
+	return 0;
+}
